@@ -1,6 +1,7 @@
 # fixmyenglish
 
-A new Flutter project.
+The idea we will work on for the flutter course will be an application that detect academic writing mistakes and shows them.
+The app is supposed to have the following features: take input text,Analyze text and show mistakes, Export report for the mistakes.
 
 ## Getting Started
 
@@ -14,3 +15,17 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Screen shots from the App
+
+<table>
+  <tr>
+    <td>Home Screen</td>
+  </tr>
+  <tr>
+    <td><img src="/screenshots/photo5872711403654199572.jpg" width=300 height=630></td>
+    <td><img src="/screenshots/photo5872711403654199571.jpg" width=300 height=630></td>
+    <td><img src="/screenshots/photo5872711403654199570.jpg" width=300 height=630></td>
+    <td><img src="/screenshots/photo5872711403654199569.jpg" width=300 height=630></td>
+  </tr>
+ </table>
