@@ -18,7 +18,6 @@ Future<MistakeFile> mistakeFromAPI(String text, String filename) async {
       "text": text,
     }),
   );
-  print(response.body);
   if (response.statusCode == 200) {
     return MistakeFile(
       filename,

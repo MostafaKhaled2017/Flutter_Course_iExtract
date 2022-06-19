@@ -16,10 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Fix My English',
+      title: 'iExtract',
       theme: ThemeData(
-        primaryColor : Color.fromRGBO(122, 55, 11, 1),
-
+        primaryColor: const Color.fromRGBO(122, 55, 11, 1),
       ),
       home: HomePage(),
     );

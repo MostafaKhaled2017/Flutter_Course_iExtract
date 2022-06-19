@@ -1,16 +1,13 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'TextHeighlight.dart';
+import 'TextHighlight.dart';
 
 class MistakeItem extends StatelessWidget {
   final String sentence;
   final String match;
   final String description;
 
-  MistakeItem(this.sentence, this.match, this.description);
+  const MistakeItem(this.sentence, this.match, this.description);
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +21,9 @@ class MistakeItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         elevation: 7,
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         child: Column(
           children: [
-
             buildDTH(sentence, matches, description),
           ],
         ),

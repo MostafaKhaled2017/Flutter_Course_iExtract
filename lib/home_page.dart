@@ -1,7 +1,5 @@
 //import 'dart:html';
 import 'package:flutter/material.dart';
-import 'package:substring_highlight/substring_highlight.dart';
-import 'package:syncfusion_flutter_pdf/pdf.dart';
 
 import 'Widgets/home_header.dart';
 import 'file.dart';
@@ -33,25 +31,24 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       maintainBottomViewPadding: true,
       bottom: true,
-     // resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       child: Scaffold(
-
         appBar: AppBar(
-          title: const Text('Fix My English'),
-          backgroundColor : Color.fromRGBO(122, 55, 11, 1),
+          title: const Text('iExtract'),
+          backgroundColor: const Color.fromRGBO(122, 55, 11, 1),
           actions: <Widget>[
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.more_vert,
                 color: Colors.white,
               ),
               onPressed: () {
                 showDialog(
                     context: context,
-                    builder: (ctxt) => new AlertDialog(
-                      title: Text("This application will help you to detect academic writing mistakes and show them.\nMade by:\n- Mostafa Khaled\n- Roukaya Mohammed"),
-                    )
-                );
+                    builder: (ctxt) => const AlertDialog(
+                          title: Text(
+                              "This application will help you to detect academic writing mistakes and show them.\nMade by:\n- Mostafa Khaled\n- Roukaya Mohammed"),
+                        ));
               },
             )
           ],
@@ -60,26 +57,25 @@ class HomePage extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HomeHeader(),
+            const HomeHeader(),
             SafeArea(
               maintainBottomViewPadding: true,
               bottom: true,
-              child: Container(
+              child: SizedBox(
                 width: 720,
                 height: 275,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 25.0),
+                  padding: const EdgeInsets.fromLTRB(10, 25.0,10,0),
                   child: TextField(
-                  controller: controller,
+                    controller: controller,
                     minLines: 10,
                     maxLines: 20,
                     decoration: InputDecoration(
                       labelText: "Enter Text",
-
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
                         borderSide:
-                        const BorderSide(color: Colors.black, width: 2.0),
+                            const BorderSide(color: Colors.black, width: 2.0),
                         borderRadius: BorderRadius.circular(25.0),
                       ),
                     ),
@@ -149,7 +145,7 @@ class HomePage extends StatelessWidget {
                           fontFamily: 'Merriweather',
                           fontSize: 24,
                           letterSpacing:
-                          0 /*percentages not used in flutter. defaulting to zero*/,
+                              0 /*percentages not used in flutter. defaulting to zero*/,
                           fontWeight: FontWeight.normal,
                           height: 1.5),
                     ),

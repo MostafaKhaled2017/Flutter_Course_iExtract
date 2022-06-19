@@ -21,9 +21,8 @@ class _MistakePageState extends State<MistakePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mistakes Page'),
-        backgroundColor : Color.fromRGBO(122, 55, 11, 1),
-
+        title: const Text('Mistakes Page'),
+        backgroundColor: const Color.fromRGBO(122, 55, 11, 1),
       ),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -31,12 +30,11 @@ class _MistakePageState extends State<MistakePage> {
           Container(
             /*color: Color.fromRGBO(247, 250, 235, 1),*/
             width: 350,
-            padding: EdgeInsets.only(top:25),
+            padding: const EdgeInsets.only(top: 25),
             child: FutureBuilder(
               future: widget.files[_currentFile],
-              builder: (context, snapshot){
-
-                //TODO: Add again after resolving the problem
+              builder: (context, snapshot) {
+                //TODO: Add again after the API Start working
                 /*  if(snapshot.data == null){
                   return  LinearProgressIndicator(
                     backgroundColor: Colors.cyanAccent,
@@ -48,22 +46,23 @@ class _MistakePageState extends State<MistakePage> {
 */
                 List<Mistake> data = mistakes.toList();
 
-                if(data.isNotEmpty){
+                if (data.isNotEmpty) {
                   //To Use Dummy Data in case there is a server error
                   //TODO: Remove
-                  if(data[0].sentence == "Server Error"){
+                  if (data[0].sentence == "Server Error") {
                     data = mistakes.toList();
                   }
                   return ListView.builder(
                     padding: const EdgeInsets.all(10),
-                    itemBuilder: (BuildContext context, int index){
+                    itemBuilder: (BuildContext context, int index) {
                       Mistake currentItem = data[index];
-                      return MistakeItem(currentItem.sentence, currentItem.match, currentItem.description);
+                      return MistakeItem(currentItem.sentence,
+                          currentItem.match, currentItem.description);
                     },
                     itemCount: data.length,
                   );
                 } else {
-                  return Center(
+                  return const Center(
                     child: Text('No Mistakes Found'),
                   );
                 }
@@ -100,7 +99,8 @@ class _MistakePageState extends State<MistakePage> {
                     });
               },
             ),
-          )*/],
+          )*/
+        ],
       ),
     );
   }
