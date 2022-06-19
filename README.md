@@ -4,7 +4,7 @@ The idea we will work on for the flutter course will be an application that dete
 The app is supposed to have the following features: take input text, Analyze text and show mistakes, Export report for the mistakes.
 
 ## Important Clarification
-The application code files contains codes that sends the text to the API and show the mistakes in the text, but the API became broken suddenly so we had to comment all code parts that interact with the API and added a dummy data in the app tell the API return working again.
+We have implemented that the app sends the text written by the user to the API and show the mistakes in the text, but the API became broken suddenly so we had to comment all code parts that interact with the API and added a dummy data in the app tell the API return working again.
 
 
 ## Screen shots from the App
