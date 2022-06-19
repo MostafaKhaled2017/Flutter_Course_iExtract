@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.4
   syncfusion_flutter_pdf: ^19.1.59
-  flutter_svg: ^0.18.0
+  #flutter_svg: ^0.18.0
   #file_picker: ^4.6.1
   dynamic_text_highlighting: ^2.2.0
   substring_highlight: ^1.0.33
@@ -45,7 +45,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  flutter_launcher_icons: ^0.9.2
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -55,7 +55,9 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
+flutter_icons:
+  android: true
+  image_path: assets/Android/icons8-document-64(-mdpi).png
 # The following section is specific to Flutter packages.
 flutter:
 
