@@ -20,11 +20,13 @@ samples, guidance on mobile development, and a full API reference.
 
 <table>
   <tr>
-    <td>Home Screen</td>
+    <td>App Screens</td>
   </tr>
   <tr>
     <td><img src="/screenshots/photo5872711403654199572.jpg" width=300 height=630></td>
     <td><img src="/screenshots/photo5872711403654199571.jpg" width=300 height=630></td>
+  </tr>
+  <tr>
     <td><img src="/screenshots/photo5872711403654199570.jpg" width=300 height=630></td>
     <td><img src="/screenshots/photo5872711403654199569.jpg" width=300 height=630></td>
   </tr>
