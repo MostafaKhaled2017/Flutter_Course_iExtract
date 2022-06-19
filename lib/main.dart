@@ -17,6 +17,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fix My English',
+      theme: ThemeData(
+        primaryColor : Color.fromRGBO(122, 55, 11, 1),
+
+      ),
       home: HomePage(),
     );
   }
