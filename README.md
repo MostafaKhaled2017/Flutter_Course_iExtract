@@ -1,4 +1,4 @@
-# Fix My English
+# iExtract
 
 The idea we will work on for the flutter course will be an application that detect academic writing mistakes and shows them.
 The app is supposed to have the following features: take input text, Analyze text and show mistakes, Export report for the mistakes.
