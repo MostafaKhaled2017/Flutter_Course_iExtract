@@ -1,12 +1,12 @@
 //import 'dart:html';
 import 'package:flutter/material.dart';
-
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'Widgets/home_header.dart';
 import 'additional files/global_methods.dart';
 import 'file.dart';
 import 'mistakes_page.dart';
 import 'mistake_api.dart';
-
+import 'package:FixMyEnglish/globals.dart' as globals;
 /*Future<FilePickerResult?> mistakeFromPDF() async {
   FilePickerResult? result = await FilePicker.platform.pickFiles(
     allowMultiple: true,
@@ -16,9 +16,14 @@ import 'mistake_api.dart';
   return result;
 }*/
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final controller = TextEditingController();
 
   void redirectToMistakePage(
@@ -38,6 +43,20 @@ class HomePage extends StatelessWidget {
           title: const Text('iExtract'),
           backgroundColor: const Color.fromRGBO(122, 55, 11, 1),
           actions: <Widget>[
+            Switch(
+                value: globals.light,
+                onChanged: (toggle){
+                  setState(() {
+                    globals.light = toggle;
+                    if(globals.light)
+                      {
+                        AdaptiveTheme.of(context).setLight();
+                      }else{
+                      AdaptiveTheme.of(context).setDark();
+                    }
+                  });
+
+                }),
             IconButton(
               icon: const Icon(
                 Icons.more_vert,

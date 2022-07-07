@@ -1,13 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-class HomeHeader extends StatelessWidget {
+import 'package:FixMyEnglish/globals.dart' as globals;
+class HomeHeader extends StatefulWidget {
   const HomeHeader({Key? key}) : super(key: key);
 
   @override
+  State<HomeHeader> createState() => _HomeHeaderState();
+}
+
+class _HomeHeaderState extends State<HomeHeader> {
+  @override
   Widget build(BuildContext context) {
     // Figma Flutter Generator Rectangle5Widget - COMPONENT
-    return const SizedBox(
+    return SizedBox(
         width: 720,
         height: 150,
         //color: Color.fromRGBO(242, 238, 225, 1),
@@ -17,7 +22,7 @@ class HomeHeader extends StatelessWidget {
             'iExtract',
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: Color.fromRGBO(122, 55, 11, 1),
+                color: globals.light? Color.fromRGBO(122, 55, 11, 1) : Colors.white,
                 fontFamily: 'Eczar',
                 fontSize: 90,
                 letterSpacing:
