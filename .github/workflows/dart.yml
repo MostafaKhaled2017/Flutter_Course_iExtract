@@ -63,7 +63,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Build apk.
-      - run: flutter build apk
+      - run: flutter build apk --no-sound-null-safety
 
 
       # Upload generated apk to the artifacts.
