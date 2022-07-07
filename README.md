@@ -6,7 +6,10 @@ The app is supposed to have the following features: take input text, Analyze tex
 APK Link: https://drive.google.com/file/d/1Muk_oUZkJlzglR5sOWCtVXVni7iGOSWo/view?usp=sharing
 
 ## Important Clarification
-We have implemented that the app sends the text written by the user to an external API and show the mistakes in the text, but the API became broken suddenly so we had to comment all code parts that interact with the API and added a dummy data in the app tell the API return working again. Please consider this while grading our project because it happened suddenly and we are waiting for the API developers to solve the problem. You can see the commented code that connects to Network and interact with the API in our code files.
+The API we are using does not respond sometimes and this is out of our control. If the API does not respond to the user request a message will appear for the user and an example for a mistake will appear.<br><br>
+
+Please watch this video to see the behaviour of the app when the API is responding and when it is not.<br>
+https://drive.google.com/file/d/1ZG5qzWwdV4mJ8syChYHtvy6IpPOgC0cT/view?usp=sharing
 
 ## Screen shots from the App
 
@@ -16,10 +19,9 @@ We have implemented that the app sends the text written by the user to an extern
   </tr>
   <tr>
     <td><img src="/screenshots/photo5872711403654199572.jpg" width=300 height=630></td>
-    <td><img src="/screenshots/photo5872711403654199571.jpg" width=300 height=630></td>
+    <td><img src="/screenshots/photo5872711403654199570.jpg" width=300 height=630></td>
   </tr>
   <tr>
-    <td><img src="/screenshots/photo5872711403654199570.jpg" width=300 height=630></td>
     <td><img src="/screenshots/photo5872711403654199569.jpg" width=300 height=630></td>
   </tr>
  </table>
