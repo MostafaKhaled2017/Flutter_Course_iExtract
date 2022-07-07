@@ -6,7 +6,7 @@ The app is supposed to have the following features: take input text, Analyze tex
 APK Link: https://drive.google.com/file/d/1Muk_oUZkJlzglR5sOWCtVXVni7iGOSWo/view?usp=sharing
 
 ## Important Clarification
-The API we are using does not respond sometimes and this is out of our control. If the API does not respond to the user request a message will appear for the user and an example for a mistake will appear.<br><br>
+The API we are using does not respond sometimes and this is out of our control. After the user enters the text, if the API responded successfully the user will get a list for the mistakes in the text he entered, but If the API did not respond to the user request, a message will appear for the user and an example for a mistake will appear.<br><br>
 
 
 ## Demo Video for the App
