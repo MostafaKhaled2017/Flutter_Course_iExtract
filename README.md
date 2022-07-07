@@ -10,6 +10,8 @@ The app is supposed to have the following features:
 <li>Allow Changing between LightTheme and DarkTheme</li>
 </ul>
 
+To run the App you need to use "--no-sound-null-safety"
+
 <br>
 APK Link: https://drive.google.com/file/d/1Muk_oUZkJlzglR5sOWCtVXVni7iGOSWo/view?usp=sharing
 
