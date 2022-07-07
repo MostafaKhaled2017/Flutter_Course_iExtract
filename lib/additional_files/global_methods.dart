@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 void onNetworkMissed(BuildContext context) {
   ScaffoldMessenger.of(context).showMaterialBanner(MaterialBanner(
-      content: Text(
+      content: const Text(
           'Failed to connect to network. Please connect to the Internet then try again'),
       backgroundColor: Colors.grey,
       actions: [
