@@ -6,6 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'firebase_options.dart';
 import 'views/home_page.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'Localization/app_localizations.dart';
+import 'Localization/app_localizations_delegate.dart';
+import 'Localization/app_localizations_setup.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../cubit/home_cubit.dart';
+
 const proxy = 'https://cors-anywhere.herokuapp.com/';
 const urlAPI = 'https://aqueous-anchorage-93443.herokuapp.com/FixMyEnglish';
 
@@ -38,11 +45,26 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.grey,
       ),
       initial: AdaptiveThemeMode.light,
-      builder: (theme, darkTheme) => MaterialApp(
-        title: 'iExtract',
-        theme: theme,
-        darkTheme: darkTheme,
-        home: HomePage(),
+        builder: (theme, darkTheme) => MultiBlocProvider(
+        providers: [
+          BlocProvider<LocaleCubit>(create: (_) => LocaleCubit()),
+          ],
+            child: BlocBuilder<LocaleCubit, LocaleState>(
+              buildWhen: (previousState, currentState) =>
+              previousState != currentState,
+                builder: (_, localeState) {
+                  return MaterialApp(
+                    theme: theme,
+                    darkTheme: darkTheme,
+                    debugShowCheckedModeBanner: false,
+                    home: HomePage(),
+                    supportedLocales: supportedLocales,
+                    localizationsDelegates: localizationsDelegates,
+                    localeResolutionCallback: localeResolutionCallback,
+                    locale: localeState.locale,
+                  );
+                },
+            ),
       ),
     );
   }

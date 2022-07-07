@@ -27,7 +27,7 @@ void main() {
         await tester.enterText(find.byType(TextField), 'Hello');
         await tester.press(find.byType(ElevatedButton));
         await tester.pumpAndSettle();
-        expect(find.text("No "), findsOneWidget);
+        expect(find.text("No Mistakes Found"), findsOneWidget);
       },
     );
   });
