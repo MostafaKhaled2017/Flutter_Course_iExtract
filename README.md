@@ -1,7 +1,15 @@
 # iExtract
 
 The idea we will work on for the flutter course will be an application that detect academic writing mistakes and shows them.
-The app is supposed to have the following features: take input text, Analyze text and show mistakes.
+The app is supposed to have the following features:
+<ul>
+<li>Take input text</li>
+<li>Analyze text</li>
+<li>Show Mistakes</li>
+<li>Supports Localisation</li>
+<li>Allow Changing between LightTheme and DarkTheme</li>
+</ul>
+
 <br> <br>
 APK Link: https://drive.google.com/file/d/1Muk_oUZkJlzglR5sOWCtVXVni7iGOSWo/view?usp=sharing
 
