@@ -1,5 +1,4 @@
 // @dart=2.9
-
 import 'package:FixMyEnglish/file.dart';
 import 'package:FixMyEnglish/models/mistake.dart';
 import 'package:FixMyEnglish/mistake_api.dart';
@@ -7,59 +6,63 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   setUp(() {});
-  test(
-    'unit tests',
-    () {
-      expect(
-          mistakesFromAPI('aaa', 'a.pdf', null),
-          Future.value(MistakeFile(
-            'a.pdf',
-            [],
-          )));
+  group('API testing', () {
+    test(
+      'unit tests',
+          () {
+        expect(
+            mistakesFromAPI('aaa', 'a.pdf', null),
+            Future.value(MistakeFile(
+              'a.pdf',
+              [],
+            )));
 
-      expect(
-          mistakesFromAPI("isn't", 'a.pdf', null),
-          Future.value(MistakeFile(
-            'a.pdf',
-            [
-              Mistake(
-                  match: "n't",
-                  sentence: "isn't",
-                  label: "SPOKN1",
-                  description: "Using contractions")
-            ],
-          )));
+        expect(
+            mistakesFromAPI("isn't", 'a.pdf', null),
+            Future.value(MistakeFile(
+              'a.pdf',
+              [
+                Mistake(
+                    match: "n't",
+                    sentence: "isn't",
+                    label: "SPOKN1",
+                    description: "Using contractions")
+              ],
+            )));
 
-      expect(
-          mistakesFromAPI("isn't", 'a.pdf', null),
-          Future.value(MistakeFile(
-            'a.pdf',
-            [
-              Mistake(
-                  match: "n't",
-                  sentence: "isn't",
-                  label: "SPOKN1",
-                  description: "Using contractions")
-            ],
-          )));
+        expect(
+            mistakesFromAPI("isn't", 'a.pdf', null),
+            Future.value(MistakeFile(
+              'a.pdf',
+              [
+                Mistake(
+                    match: "n't",
+                    sentence: "isn't",
+                    label: "SPOKN1",
+                    description: "Using contractions")
+              ],
+            )));
 
-      expect(
-          mistakesFromAPI("There are good", 'a.pdf', null),
-          Future.value(MistakeFile(
-            'a.pdf',
-            [
-              Mistake(
-                  match: "There are",
-                  sentence: "There are good",
-                  label: "SPOKN1",
-                  description: "Using forms of there is/are"),
-              Mistake(
-                  match: "good",
-                  sentence: "There are good",
-                  label: "VOCAB5",
-                  description: "using a forbidden words"),
-            ],
-          )));
-    },
-  );
+        expect(
+            mistakesFromAPI("There are good", 'a.pdf', null),
+            Future.value(MistakeFile(
+              'a.pdf',
+              [
+                Mistake(
+                    match: "There are",
+                    sentence: "There are good",
+                    label: "SPOKN1",
+                    description: "Using forms of there is/are"),
+                Mistake(
+                    match: "good",
+                    sentence: "There are good",
+                    label: "VOCAB5",
+                    description: "using a forbidden words"),
+              ],
+            )));
+      },
+    );
+
+  });
+
 }
