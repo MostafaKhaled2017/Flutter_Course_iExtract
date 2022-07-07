@@ -6,7 +6,7 @@ The app is supposed to have the following features:
 <li>Take input text</li>
 <li>Analyze text</li>
 <li>Show Mistakes</li>
-<li>Supports Localisation</li>
+<li>Support Localisation</li>
 <li>Allow Changing between LightTheme and DarkTheme</li>
 </ul>
 
