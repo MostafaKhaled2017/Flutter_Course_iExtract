@@ -34,11 +34,6 @@ class _MistakesPageState extends State<MistakesPage> {
               future: widget.files[_currentFile],
               builder: (context, snapshot) {
                   if(snapshot.data == null){
-                  /*return  LinearProgressIndicator(
-                    backgroundColor: Colors.cyanAccent,
-                    valueColor: new AlwaysStoppedAnimation<Color>(Colors.red),
-                  );*/
-
                   return Center(
                     child: CircularProgressIndicator(
                     ),
@@ -67,37 +62,6 @@ class _MistakesPageState extends State<MistakesPage> {
               },
             ),
           ),
-
-          /* Container(
-            width: 300,
-            child: ListView.builder(
-              padding: const EdgeInsets.all(10),
-              itemCount: widget.files.length,
-              itemBuilder:(context, index) {
-                return FutureBuilder(
-                    future: widget.files[index],
-                    builder: (context, snapshot) {
-                      if (snapshot.data == null) {
-                        //TODO
-                      }
-                     // String? fileName = (snapshot.data as MistakeFile).name;
-                      return TextButton(
-                        onPressed: () {
-                          print(index);
-                          setState(() {
-                            _currentFile = index;
-                          });
-                        },
-                        child: Text('File 1'),
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Color.fromRGBO(233, 241, 232, 1)),
-                        ),
-                      );
-                    });
-              },
-            ),
-          )*/
         ],
       ),
     );
