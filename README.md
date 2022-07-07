@@ -8,7 +8,7 @@ APK Link: https://drive.google.com/file/d/1Muk_oUZkJlzglR5sOWCtVXVni7iGOSWo/view
 ## Important Clarification
 The API we are using does not respond sometimes and this is out of our control. If the API does not respond to the user request a message will appear for the user and an example for a mistake will appear.<br><br>
 
-Please watch this <h3><bstyle='color:red !important>video</></h3> to see the behaviour of the app when the API is responding and when it is not.<br>
+Please watch this <h3><b style='color:red !important>video</></h3> to see the behaviour of the app when the API is responding and when it is not.<br>
 https://drive.google.com/file/d/1ZG5qzWwdV4mJ8syChYHtvy6IpPOgC0cT/view?usp=sharing
 
 ## Screen shots from the App
