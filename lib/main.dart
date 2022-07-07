@@ -12,7 +12,8 @@ import 'Localization/app_localizations_delegate.dart';
 import 'Localization/app_localizations_setup.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubit/home_cubit.dart';
-
+import 'app_constants.dart';
+import 'cubit/local/locale_cubit.dart';
 const proxy = 'https://cors-anywhere.herokuapp.com/';
 const urlAPI = 'https://aqueous-anchorage-93443.herokuapp.com/FixMyEnglish';
 
