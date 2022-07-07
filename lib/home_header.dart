@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'additional_files/global_variables.dart' as globals;
 class HomeHeader extends StatefulWidget {
@@ -22,7 +21,7 @@ class _HomeHeaderState extends State<HomeHeader> {
             'iExtract',
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: globals.light? Color.fromRGBO(122, 55, 11, 1) : Colors.white,
+                color: globals.light? const Color.fromRGBO(122, 55, 11, 1) : Colors.white,
                 fontFamily: 'Eczar',
                 fontSize: 90,
                 letterSpacing:

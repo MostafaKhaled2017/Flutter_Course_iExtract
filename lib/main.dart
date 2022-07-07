@@ -1,18 +1,13 @@
 // @dart=2.9
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'firebase_options.dart';
 import 'views/home_page.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'Localization/app_localizations.dart';
-import 'Localization/app_localizations_delegate.dart';
 import 'Localization/app_localizations_setup.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/home_cubit.dart';
-import 'app_constants.dart';
+import 'additional_files/app_constants.dart';
 import 'cubit/local/locale_cubit.dart';
 const proxy = 'https://cors-anywhere.herokuapp.com/';
 const urlAPI = 'https://aqueous-anchorage-93443.herokuapp.com/FixMyEnglish';
@@ -39,7 +34,7 @@ class MyApp extends StatelessWidget {
     return AdaptiveTheme(
       light: ThemeData(
         brightness: Brightness.light,
-        primaryColor: Color.fromRGBO(122, 55, 11, 1),
+        primaryColor: const Color.fromRGBO(122, 55, 11, 1),
       ),
       dark: ThemeData(
         brightness: Brightness.dark,

@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart' show Locale;
 import 'package:meta/meta.dart';
-import 'package:FixMyEnglish/app_constants.dart';
 part 'locale_state.dart';
 
 class LocaleCubit extends Cubit<LocaleState> {

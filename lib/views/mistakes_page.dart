@@ -15,7 +15,7 @@ class MistakesPage extends StatefulWidget {
 }
 
 class _MistakesPageState extends State<MistakesPage> {
-  int _currentFile = 0;
+  final int _currentFile = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class _MistakesPageState extends State<MistakesPage> {
               body: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     /*color: Color.fromRGBO(247, 250, 235, 1),*/
                     width: 350,
                     child: FutureBuilder(

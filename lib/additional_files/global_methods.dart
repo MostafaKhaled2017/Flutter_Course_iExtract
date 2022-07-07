@@ -9,7 +9,7 @@ void onNetworkMissed(BuildContext context) {
       backgroundColor: Colors.grey,
       actions: [
         TextButton(
-          child: Text('DISMISS'),
+          child: const Text('DISMISS'),
           onPressed: () {
             ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
           },

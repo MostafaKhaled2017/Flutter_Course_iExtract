@@ -27,8 +27,7 @@ Future<MistakeFile> mistakesFromAPI(String text, String filename, BuildContext c
           json.decode(response.body).map((x) => Mistake.fromJson(x))),
     );
   } else {
-    print('Connecting to Mock API');
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       content: Text("API is not responding. Please try again"),
     ));
     List<Mistake> data = mistakes.toList();
