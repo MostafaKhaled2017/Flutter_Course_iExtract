@@ -20,9 +20,10 @@ To see the behaviour of the app when the API is responding and when it is not, p
   </tr>
   <tr>
     <td><img src="/screenshots/photo5872711403654199572.jpg" width=300 height=630></td>
-    <td><img src="/screenshots/photo5872711403654199570.jpg" width=300 height=630></td>
+    <td><img src = "/screenshots/photo_2022-07-07_20-31-51.jpg" width=300 height=630></td>
   </tr>
   <tr>
+    <td><img src="/screenshots/photo5872711403654199570.jpg" width=300 height=630></td>
     <td><img src="/screenshots/photo5872711403654199569.jpg" width=300 height=630></td>
   </tr>
  </table>
