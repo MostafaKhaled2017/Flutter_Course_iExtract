@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "894802445528",
+    "project_id": "i-extract",
+    "storage_bucket": "i-extract.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894802445528:android:44122b8c3296d94afc03ad",
+        "android_client_info": {
+          "package_name": "com.example.fixmyenglish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894802445528-s6g765i48d69gmelgich2gv239p7mvha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaMyLT4Idi-ySUxLIQS4DXKtXrD_BpHuw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894802445528-s6g765i48d69gmelgich2gv239p7mvha.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "894802445528-7365qok2u5cve3kruc4gtunh49dannbu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fixmyenglish"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
