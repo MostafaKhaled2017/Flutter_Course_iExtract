@@ -1,13 +1,12 @@
 //import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'Widgets/home_header.dart';
-import 'additional files/global_methods.dart';
-import 'file.dart';
-import 'globals.dart';
-import 'mistakes_page.dart';
-import 'mistake_api.dart';
-import 'package:FixMyEnglish/globals.dart' as globals;
+import '../home_header.dart';
+import '../additional_files/global_methods.dart';
+import '../file.dart';
+import '../views/mistakes_page.dart';
+import '../mistake_api.dart';
+import '../additional_files/global_variables.dart';
 /*Future<FilePickerResult?> mistakeFromPDF() async {
   FilePickerResult? result = await FilePicker.platform.pickFiles(
     allowMultiple: true,

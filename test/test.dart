@@ -1,7 +1,7 @@
 // @dart=2.9
 
 import 'package:FixMyEnglish/file.dart';
-import 'package:FixMyEnglish/mistake.dart';
+import 'package:FixMyEnglish/models/mistake.dart';
 import 'package:FixMyEnglish/mistake_api.dart';
 import 'package:flutter_test/flutter_test.dart';
 

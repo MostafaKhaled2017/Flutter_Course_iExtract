@@ -5,8 +5,8 @@ import 'package:http/http.dart' as http;
 
 import 'main.dart';
 import 'file.dart';
-import 'mistake.dart';
-import 'mistakes_demo_data.dart';
+import 'models/mistake.dart';
+import 'additional_files/mistakes_demo_data.dart';
 
 Future<MistakeFile> mistakesFromAPI(String text, String filename, BuildContext context) async {
   final response = await http.post(

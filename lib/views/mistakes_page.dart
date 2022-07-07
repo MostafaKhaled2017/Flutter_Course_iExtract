@@ -1,9 +1,9 @@
 import 'package:FixMyEnglish/Widgets/mistake_item.dart';
-import 'package:FixMyEnglish/mistakes_demo_data.dart';
+import 'package:FixMyEnglish/additional_files/mistakes_demo_data.dart';
 import 'package:flutter/material.dart';
 
-import 'file.dart';
-import 'mistake.dart';
+import '../file.dart';
+import '../models/mistake.dart';
 
 class MistakesPage extends StatefulWidget {
   final List<Future<MistakeFile>> files;

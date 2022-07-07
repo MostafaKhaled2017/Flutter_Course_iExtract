@@ -1,4 +1,4 @@
-import 'mistake.dart';
+import 'models/mistake.dart';
 
 class MistakeFile {
   final String name;

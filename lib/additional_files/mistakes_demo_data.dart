@@ -1,4 +1,4 @@
-import 'package:FixMyEnglish/mistake.dart';
+import 'package:FixMyEnglish/models/mistake.dart';
 
 var mistakes = [
   Mistake(

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:FixMyEnglish/globals.dart' as globals;
+import 'additional_files/global_variables.dart' as globals;
 class HomeHeader extends StatefulWidget {
   const HomeHeader({Key? key}) : super(key: key);
 
