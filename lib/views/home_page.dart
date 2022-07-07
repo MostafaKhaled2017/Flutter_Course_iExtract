@@ -3,9 +3,10 @@ import '../cubit/home_cubit.dart';
 import '../home_header.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../states/home_states.dart';
-
+import 'package:FixMyEnglish/Localization/app_localizations.dart';
+import 'package:FixMyEnglish/cubit/local/locale_cubit.dart';
 import '../additional_files/global_variables.dart';
-
+import 'package:FixMyEnglish/additional_files/app_constants.dart';
 class HomePage extends StatelessWidget {
   final controller = TextEditingController();
 
@@ -62,7 +63,7 @@ class HomePage extends StatelessWidget {
                             minLines: 10,
                             maxLines: 20,
                             decoration: InputDecoration(
-                              labelText: "Enter Text",
+                              labelText: AppLocalizations.of(context)!.translate('textFieldHint'),
                               fillColor: Colors.white,
                               border: OutlineInputBorder(
                                 borderSide:
@@ -85,8 +86,8 @@ class HomePage extends StatelessWidget {
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   const Color.fromRGBO(242, 238, 225, 1)),
                             ),
-                            child: const Text(
-                              'Analyze Text',
+                            child: Text(
+                              AppLocalizations.of(context)!.translate('ElevatedButton'),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Color.fromRGBO(73, 69, 7, 1),

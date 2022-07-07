@@ -1,7 +1,10 @@
 import 'package:FixMyEnglish/cubit/mistakes_page_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:FixMyEnglish/Localization/app_localizations.dart';
+import 'package:FixMyEnglish/cubit/local/locale_cubit.dart';
+import '../additional_files/global_variables.dart';
+import 'package:FixMyEnglish/additional_files/app_constants.dart';
 import '../file.dart';
 import '../states/mistakes_page_states.dart';
 
@@ -28,7 +31,7 @@ class _MistakesPageState extends State<MistakesPage> {
 
             return  Scaffold(
               appBar: AppBar(
-                title: const Text('Mistakes Page'),
+                title: Text(AppLocalizations.of(context)!.translate('MistakesPage'),),
                 backgroundColor: const Color.fromRGBO(122, 55, 11, 1),
               ),
               body: Row(
