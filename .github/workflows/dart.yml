@@ -50,7 +50,7 @@ jobs:
       - run: flutter pub get
 
       # Check for any formatting issues in the code.
-      - run: flutter format.
+      - run: flutter format
 
       ################################
       # Run Linter against code base #
