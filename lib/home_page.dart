@@ -4,6 +4,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'Widgets/home_header.dart';
 import 'additional files/global_methods.dart';
 import 'file.dart';
+import 'globals.dart';
 import 'mistakes_page.dart';
 import 'mistake_api.dart';
 import 'package:FixMyEnglish/globals.dart' as globals;
@@ -32,6 +33,15 @@ class _HomePageState extends State<HomePage> {
         MaterialPageRoute(builder: (context) => MistakesPage(files: files)));
   }
 
+  void choiceAction(String choice){
+    if(choice == 'Light Theme'){
+      AdaptiveTheme.of(context).setLight();
+    }
+    else if(choice == 'Dark Theme'){
+      AdaptiveTheme.of(context).setDark();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -43,21 +53,19 @@ class _HomePageState extends State<HomePage> {
           title: const Text('iExtract'),
           backgroundColor: const Color.fromRGBO(122, 55, 11, 1),
           actions: <Widget>[
-            Switch(
-                value: globals.light,
-                onChanged: (toggle){
-                  setState(() {
-                    globals.light = toggle;
-                    if(globals.light)
-                      {
-                        AdaptiveTheme.of(context).setLight();
-                      }else{
-                      AdaptiveTheme.of(context).setDark();
-                    }
-                  });
+            PopupMenuButton<String>(
+              onSelected: choiceAction,
+              itemBuilder: (BuildContext context){
+                return choices.map((String choice){
+                  return PopupMenuItem<String>(
+                    value: choice,
+                    child: Text(choice),);
+                })
+                    .toList();
+              }
+              ,),
 
-                }),
-            IconButton(
+           /* IconButton(
               icon: const Icon(
                 Icons.more_vert,
                 color: Colors.white,
@@ -70,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                               "This application will help you to detect academic writing mistakes and show them.\nMade by:\n- Mostafa Khaled\n- Roukaya Mohammed"),
                         ));
               },
-            )
+            )*/
           ],
         ),
         resizeToAvoidBottomInset: false,
