@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'Widgets/home_header.dart';
+import 'additional files/global_methods.dart';
 import 'file.dart';
 import 'mistake_page.dart';
 import 'mistake_api.dart';
@@ -128,10 +129,17 @@ class HomePage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: ElevatedButton(
-                    onPressed: () {
-                      List<Future<MistakeFile>> files = [];
-                      files.add(mistakeFromAPI(controller.text, 'unnamed'));
-                      redirectToMistakePage(context, files);
+                    onPressed: () async{
+                      //Checking internet connection
+                      bool isOnline = await hasNetwork(context);
+
+                  if(isOnline) {
+                    List<Future<MistakeFile>> files = [];
+                    files.add(mistakeFromAPI(controller.text, 'unnamed'));
+                    redirectToMistakePage(context, files);
+                  } else {
+                    onNetworkMissed(context);
+                  }
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
