@@ -27,8 +27,8 @@ class MistakeItem extends StatelessWidget {
             buildDTH(sentence, matches, description),
             Padding(
               padding: const EdgeInsets.only(bottom: 5.0),
-              child: Text('Error: ${description}',
-                style: TextStyle(
+              child: Text('Error: $description',
+                style: const TextStyle(
                   color: Colors.redAccent,
                   fontSize: 14,
                 ),

@@ -4,9 +4,7 @@ import '../home_header.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../states/home_states.dart';
 import 'package:FixMyEnglish/Localization/app_localizations.dart';
-import 'package:FixMyEnglish/cubit/local/locale_cubit.dart';
 import '../additional_files/global_variables.dart';
-import 'package:FixMyEnglish/additional_files/app_constants.dart';
 class HomePage extends StatelessWidget {
   final controller = TextEditingController();
 
@@ -90,7 +88,7 @@ class HomePage extends StatelessWidget {
                               AppLocalizations.of(context)!.translate('ElevatedButton'),
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: Color.fromRGBO(73, 69, 7, 1),
+                                  color: const Color.fromRGBO(73, 69, 7, 1),
                                   fontFamily: 'Merriweather',
                                   fontSize: 24,
                                   letterSpacing:

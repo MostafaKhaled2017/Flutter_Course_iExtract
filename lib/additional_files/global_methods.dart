@@ -1,5 +1,4 @@
 import 'package:universal_io/io.dart';
-import'dart:io' show Platform;
 import 'package:flutter/material.dart';
 
 void onNetworkMissed(BuildContext context) {
