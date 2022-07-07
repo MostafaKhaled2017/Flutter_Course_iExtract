@@ -1,16 +1,6 @@
 import 'package:universal_io/io.dart';
-
+import'dart:io' show Platform;
 import 'package:flutter/material.dart';
-
-Future<bool> hasNetwork(BuildContext context) async {
-  //TODO : Make sure it works on Web
-  try {
-    final result = await InternetAddress.lookup('example.com');
-    return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
-  } on SocketException catch (_) {
-    return false;
-  }
-}
 
 void onNetworkMissed(BuildContext context) {
   ScaffoldMessenger.of(context).showMaterialBanner(MaterialBanner(
@@ -26,3 +16,19 @@ void onNetworkMissed(BuildContext context) {
         ),
       ]));
 }
+
+Future<bool> hasNetwork(BuildContext context) async {
+
+  //TODO : Remove the condition
+  if(Platform.isAndroid) {
+    try {
+      final result = await InternetAddress.lookup('example.com');
+      return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
+    } on SocketException catch (_) {
+      return false;
+    }
+  } else {
+    return true;
+  }
+}
+

@@ -28,17 +28,20 @@ class HomePage extends StatelessWidget {
                   title: const Text('iExtract'),
                   backgroundColor: const Color.fromRGBO(122, 55, 11, 1),
                   actions: <Widget>[
-                    PopupMenuButton<String>(
-                      onSelected: (String choice) => cubit.changeTheme(choice),
-                      itemBuilder: (BuildContext context){
-                        return choices.map((String choice){
-                          return PopupMenuItem<String>(
-                            value: choice,
-                            child: Text(choice),);
-                        })
-                            .toList();
-                      }
-                      ,),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: PopupMenuButton<String>(
+                        onSelected: (String choice) => cubit.changeTheme(choice),
+                        itemBuilder: (BuildContext context){
+                          return choices.map((String choice){
+                            return PopupMenuItem<String>(
+                              value: choice,
+                              child: Text(choice),);
+                          })
+                              .toList();
+                        }
+                        ,),
+                    ),
                   ],
                 ),
                 resizeToAvoidBottomInset: false,
