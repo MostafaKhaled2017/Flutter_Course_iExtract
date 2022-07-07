@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'firebase_options.dart';
 import 'views/home_page.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 const proxy = 'https://cors-anywhere.herokuapp.com/';
 const urlAPI = 'https://aqueous-anchorage-93443.herokuapp.com/FixMyEnglish';
 

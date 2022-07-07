@@ -29,7 +29,7 @@ Future<MistakeFile> mistakesFromAPI(String text, String filename, BuildContext c
   } else {
     print('Connecting to Mock API');
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text("API is not responding now. Please try again later"),
+      content: Text("API is not responding. Please try again"),
     ));
     List<Mistake> data = mistakes.toList();
 

@@ -1,157 +1,111 @@
-//import 'dart:html';
 import 'package:flutter/material.dart';
-import 'package:adaptive_theme/adaptive_theme.dart';
+import '../cubit/home_cubit.dart';
 import '../home_header.dart';
-import '../additional_files/global_methods.dart';
-import '../file.dart';
-import '../views/mistakes_page.dart';
-import '../mistake_api.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../states/home_states.dart';
+
 import '../additional_files/global_variables.dart';
-/*Future<FilePickerResult?> mistakeFromPDF() async {
-  FilePickerResult? result = await FilePicker.platform.pickFiles(
-    allowMultiple: true,
-    type: FileType.custom,
-    allowedExtensions: ['pdf'],
-  );
-  return result;
-}*/
 
-class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends StatelessWidget {
   final controller = TextEditingController();
-
-  void redirectToMistakePage(
-      BuildContext context, List<Future<MistakeFile>> files) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => MistakesPage(files: files)));
-  }
-
-  void choiceAction(String choice){
-    if(choice == 'Light Theme'){
-      AdaptiveTheme.of(context).setLight();
-    }
-    else if(choice == 'Dark Theme'){
-      AdaptiveTheme.of(context).setDark();
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      maintainBottomViewPadding: true,
-      bottom: true,
-      // resizeToAvoidBottomInset: false,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('iExtract'),
-          backgroundColor: const Color.fromRGBO(122, 55, 11, 1),
-          actions: <Widget>[
-            PopupMenuButton<String>(
-              onSelected: choiceAction,
-              itemBuilder: (BuildContext context){
-                return choices.map((String choice){
-                  return PopupMenuItem<String>(
-                    value: choice,
-                    child: Text(choice),);
-                })
-                    .toList();
-              }
-              ,),
+    return BlocProvider(
+      create: (BuildContext context) => HomeCubit(null, context),
+      child: BlocConsumer<HomeCubit, HomeStates> (
+          listener: (BuildContext context, state) {},
+          builder: (BuildContext context, state) {
 
-           /* IconButton(
-              icon: const Icon(
-                Icons.more_vert,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                showDialog(
-                    context: context,
-                    builder: (ctxt) => const AlertDialog(
-                          title: Text(
-                              "This application will help you to detect academic writing mistakes and show them.\nMade by:\n- Mostafa Khaled\n- Roukaya Mohammed"),
-                        ));
-              },
-            )*/
-          ],
-        ),
-        resizeToAvoidBottomInset: false,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const HomeHeader(),
-            SafeArea(
+            HomeCubit cubit = HomeCubit(null, context);
+
+            return SafeArea(
               maintainBottomViewPadding: true,
               bottom: true,
-              child: SizedBox(
-                width: 720,
-                height: 275,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(10, 25.0,10,0),
-                  child: TextField(
-                    controller: controller,
-                    minLines: 10,
-                    maxLines: 20,
-                    decoration: InputDecoration(
-                      labelText: "Enter Text",
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(color: Colors.black, width: 2.0),
-                        borderRadius: BorderRadius.circular(25.0),
+              // resizeToAvoidBottomInset: false,
+              child: Scaffold(
+                appBar: AppBar(
+                  title: const Text('iExtract'),
+                  backgroundColor: const Color.fromRGBO(122, 55, 11, 1),
+                  actions: <Widget>[
+                    PopupMenuButton<String>(
+                      onSelected: (String choice) => cubit.changeTheme(choice),
+                      itemBuilder: (BuildContext context){
+                        return choices.map((String choice){
+                          return PopupMenuItem<String>(
+                            value: choice,
+                            child: Text(choice),);
+                        })
+                            .toList();
+                      }
+                      ,),
+                  ],
+                ),
+                resizeToAvoidBottomInset: false,
+                body: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const HomeHeader(),
+                    SafeArea(
+                      maintainBottomViewPadding: true,
+                      bottom: true,
+                      child: SizedBox(
+                        width: 720,
+                        height: 275,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 25.0,10,0),
+                          child: TextField(
+                            controller: controller,
+                            minLines: 10,
+                            maxLines: 20,
+                            decoration: InputDecoration(
+                              labelText: "Enter Text",
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                borderSide:
+                                const BorderSide(color: Colors.black, width: 2.0),
+                                borderRadius: BorderRadius.circular(25.0),
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: ElevatedButton(
+                            onPressed: () =>cubit.submitText(controller.text),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  const Color.fromRGBO(242, 238, 225, 1)),
+                            ),
+                            child: const Text(
+                              'Analyze Text',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(73, 69, 7, 1),
+                                  fontFamily: 'Merriweather',
+                                  fontSize: 24,
+                                  letterSpacing:
+                                  0 /*percentages not used in flutter. defaulting to zero*/,
+                                  fontWeight: FontWeight.normal,
+                                  height: 1.5),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: ElevatedButton(
-                    onPressed: () async{
+            );
 
-                      //Checking internet connection
-                      bool isOnline = await hasNetwork(context);
-
-                  if(isOnline) {
-                    List<Future<MistakeFile>> files = [];
-                    files.add(mistakesFromAPI(controller.text, 'UnNamed', context));
-                    redirectToMistakePage(context, files);
-                  } else {
-                    onNetworkMissed(context);
-                  }
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color.fromRGBO(242, 238, 225, 1)),
-                    ),
-                    child: const Text(
-                      'Analyze Text',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Color.fromRGBO(73, 69, 7, 1),
-                          fontFamily: 'Merriweather',
-                          fontSize: 24,
-                          letterSpacing:
-                              0 /*percentages not used in flutter. defaulting to zero*/,
-                          fontWeight: FontWeight.normal,
-                          height: 1.5),
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ],
-        ),
+          }
       ),
     );
   }
+
 }
