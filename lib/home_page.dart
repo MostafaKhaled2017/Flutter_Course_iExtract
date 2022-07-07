@@ -130,6 +130,7 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: ElevatedButton(
                     onPressed: () async{
+
                       //Checking internet connection
                       bool isOnline = await hasNetwork(context);
 

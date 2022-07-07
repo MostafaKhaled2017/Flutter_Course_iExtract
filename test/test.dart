@@ -1,42 +1,63 @@
-import 'package:flutter/material.dart';
-import 'dart:math' as math;
+import 'package:FixMyEnglish/file.dart';
+import 'package:FixMyEnglish/mistake.dart';
+import 'package:FixMyEnglish/mistake_api.dart';
+import 'package:flutter_test/flutter_test.dart';
 
-class Rectangle5Widget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Figma Flutter Generator Rectangle5Widget - COMPONENT
-    return Container(
-        width: 720,
-        height: 275,
-        color: Color.fromRGBO(250, 10, 12, 1),
-        child: Stack(
-            children: <Widget>[
-              Positioned(
-                  top: 0,
-                  left: -1,
-                  child: Text('iExtract', textAlign: TextAlign.center, style: TextStyle(
-                      color: Color.fromRGBO(122, 55, 11, 1),
-                      fontFamily: 'Eczar',
-                      fontSize: 128,
-                      letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                      fontWeight: FontWeight.normal,
-                      height: 1
-                  ),)
-              ),Positioned(
-                  top: 200,
-                  left: 125.82524108886719,
-                  child: Transform.rotate(
-                    angle: 1.4052910638162584e-14 * (math.pi / 180),
-                    child: Divider(
-                        color: Color.fromRGBO(77, 102, 88, 1),
-                        thickness: 10
-                    )
-                    ,
-                  )
-              ),
-            ]
-        )
-    );
-  }
+void main() {
+  setUp(() {});
+  test(
+    'unit tests',
+    () {
+      expect(
+          mistakeFromAPI('aaa', 'a.pdf'),
+          Future.value(MistakeFile(
+            'a.pdf',
+            [],
+          )));
+
+      expect(
+          mistakeFromAPI("isn't", 'a.pdf'),
+          Future.value(MistakeFile(
+            'a.pdf',
+            [
+              Mistake(
+                  match: "n't",
+                  sentence: "isn't",
+                  label: "SPOKN1",
+                  description: "Using contractions")
+            ],
+          )));
+
+      expect(
+          mistakeFromAPI("isn't", 'a.pdf'),
+          Future.value(MistakeFile(
+            'a.pdf',
+            [
+              Mistake(
+                  match: "n't",
+                  sentence: "isn't",
+                  label: "SPOKN1",
+                  description: "Using contractions")
+            ],
+          )));
+
+      expect(
+          mistakeFromAPI("There are good", 'a.pdf'),
+          Future.value(MistakeFile(
+            'a.pdf',
+            [
+              Mistake(
+                  match: "There are",
+                  sentence: "There are good",
+                  label: "SPOKN1",
+                  description: "Using forms of there is/are"),
+              Mistake(
+                  match: "good",
+                  sentence: "There are good",
+                  label: "VOCAB5",
+                  description: "using a forbidden words"),
+            ],
+          )));
+    },
+  );
 }
-        
