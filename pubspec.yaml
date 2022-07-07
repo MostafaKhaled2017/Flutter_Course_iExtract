@@ -34,6 +34,8 @@ dependencies:
   universal_io: ^2.0.4
   firebase_core: ^1.19.1
   firebase_crashlytics: ^2.8.2
+  flutter_native_splash: ^2.0.1+1
+
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +54,10 @@ dev_dependencies:
 flutter_icons:
   android: true
   image_path: assets/Android/icons8-document-64(-mdpi).png
+flutter_native_splash:
+  color: "#964B00"
+  image: assets/images/book.png
+
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -71,8 +77,8 @@ flutter:
           weight: 400
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
