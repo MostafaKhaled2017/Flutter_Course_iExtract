@@ -9,14 +9,14 @@ void main() {
     'unit tests',
     () {
       expect(
-          mistakeFromAPI('aaa', 'a.pdf'),
+          mistakesFromAPI('aaa', 'a.pdf'),
           Future.value(MistakeFile(
             'a.pdf',
             [],
           )));
 
       expect(
-          mistakeFromAPI("isn't", 'a.pdf'),
+          mistakesFromAPI("isn't", 'a.pdf'),
           Future.value(MistakeFile(
             'a.pdf',
             [
@@ -29,7 +29,7 @@ void main() {
           )));
 
       expect(
-          mistakeFromAPI("isn't", 'a.pdf'),
+          mistakesFromAPI("isn't", 'a.pdf'),
           Future.value(MistakeFile(
             'a.pdf',
             [
@@ -42,7 +42,7 @@ void main() {
           )));
 
       expect(
-          mistakeFromAPI("There are good", 'a.pdf'),
+          mistakesFromAPI("There are good", 'a.pdf'),
           Future.value(MistakeFile(
             'a.pdf',
             [

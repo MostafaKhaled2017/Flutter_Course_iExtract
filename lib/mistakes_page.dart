@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'file.dart';
 import 'mistake.dart';
 
-class MistakePage extends StatefulWidget {
+class MistakesPage extends StatefulWidget {
   final List<Future<MistakeFile>> files;
 
-  const MistakePage({Key? key, required this.files}) : super(key: key);
+  const MistakesPage({Key? key, required this.files}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _MistakePageState();
+  State<StatefulWidget> createState() => _MistakesPageState();
 }
 
-class _MistakePageState extends State<MistakePage> {
+class _MistakesPageState extends State<MistakesPage> {
   int _currentFile = 0;
 
   @override
@@ -30,28 +30,26 @@ class _MistakePageState extends State<MistakePage> {
           Container(
             /*color: Color.fromRGBO(247, 250, 235, 1),*/
             width: 350,
-            padding: const EdgeInsets.only(top: 25),
             child: FutureBuilder(
               future: widget.files[_currentFile],
               builder: (context, snapshot) {
-                //TODO: Add again after the API Start working
-                /*  if(snapshot.data == null){
-                  return  LinearProgressIndicator(
+                  if(snapshot.data == null){
+                  /*return  LinearProgressIndicator(
                     backgroundColor: Colors.cyanAccent,
                     valueColor: new AlwaysStoppedAnimation<Color>(Colors.red),
+                  );*/
+
+                  return Center(
+                    child: CircularProgressIndicator(
+                    ),
                   );
                 }
 
                 List<Mistake> data = ((snapshot.data as MistakeFile).mistakes).toList();
-*/
-                List<Mistake> data = mistakes.toList();
 
                 if (data.isNotEmpty) {
                   //To Use Dummy Data in case there is a server error
-                  //TODO: Remove
-                  if (data[0].sentence == "Server Error") {
-                    data = mistakes.toList();
-                  }
+
                   return ListView.builder(
                     padding: const EdgeInsets.all(10),
                     itemBuilder: (BuildContext context, int index) {

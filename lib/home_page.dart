@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'Widgets/home_header.dart';
 import 'additional files/global_methods.dart';
 import 'file.dart';
-import 'mistake_page.dart';
+import 'mistakes_page.dart';
 import 'mistake_api.dart';
 
 /*Future<FilePickerResult?> mistakeFromPDF() async {
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
   void redirectToMistakePage(
       BuildContext context, List<Future<MistakeFile>> files) {
     Navigator.push(context,
-        MaterialPageRoute(builder: (context) => MistakePage(files: files)));
+        MaterialPageRoute(builder: (context) => MistakesPage(files: files)));
   }
 
   @override
@@ -87,45 +87,6 @@ class HomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                /* Padding(
-                  padding: const EdgeInsets.only(right: 250.0),
-                  child: ElevatedButton(
-                    onPressed: () async {
-                      List<Future<MistakeFile>> files = [];
-                      FilePickerResult? result =
-                          await FilePicker.platform.pickFiles(
-                        allowMultiple: true,
-                        type: FileType.custom,
-                        allowedExtensions: ['pdf'],
-                      );
-                      if (result != null) {
-                        for (final file in result.files) {
-                          final PdfDocument document =
-                              PdfDocument(inputBytes: file.bytes);
-                          String text = PdfTextExtractor(document).extractText();
-                          files.add(mistakeFromAPI(text, file.name));
-                        }
-                        redirectToMistakePage(context, files);
-                      }
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color.fromRGBO(233, 241, 232, 1)),
-                    ),
-                    child: const Text(
-                      'Upload PDF',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Color.fromRGBO(73, 69, 7, 1),
-                          fontFamily: 'Merriweather',
-                          fontSize: 24,
-                          letterSpacing:
-                              0 /*percentages not used in flutter. defaulting to zero*/,
-                          fontWeight: FontWeight.normal,
-                          height: 1.5),
-                    ),
-                  ),
-                ),*/
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: ElevatedButton(
@@ -136,7 +97,7 @@ class HomePage extends StatelessWidget {
 
                   if(isOnline) {
                     List<Future<MistakeFile>> files = [];
-                    files.add(mistakeFromAPI(controller.text, 'unnamed'));
+                    files.add(mistakesFromAPI(controller.text, 'UnNamed', context));
                     redirectToMistakePage(context, files);
                   } else {
                     onNetworkMissed(context);

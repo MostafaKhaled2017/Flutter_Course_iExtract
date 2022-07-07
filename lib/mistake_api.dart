@@ -1,12 +1,14 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'main.dart';
 import 'file.dart';
 import 'mistake.dart';
+import 'mistakes_demo_data.dart';
 
-Future<MistakeFile> mistakeFromAPI(String text, String filename) async {
+Future<MistakeFile> mistakesFromAPI(String text, String filename, BuildContext context) async {
   final response = await http.post(
     Uri.parse(urlAPI),
     headers: {
@@ -25,8 +27,12 @@ Future<MistakeFile> mistakeFromAPI(String text, String filename) async {
           json.decode(response.body).map((x) => Mistake.fromJson(x))),
     );
   } else {
-    return MistakeFile(filename, [
-      Mistake(match: "", sentence: "Server Error", label: "", description: "")
-    ]);
+    print('Connecting to Mock API');
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text("API is not responding now. Please try again later"),
+    ));
+    List<Mistake> data = mistakes.toList();
+
+    return MistakeFile(filename, data);
   }
 }

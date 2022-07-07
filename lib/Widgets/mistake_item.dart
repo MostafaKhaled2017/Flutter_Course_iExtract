@@ -25,6 +25,15 @@ class MistakeItem extends StatelessWidget {
         child: Column(
           children: [
             buildDTH(sentence, matches, description),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 5.0),
+              child: Text('Error: ${description}',
+                style: TextStyle(
+                  color: Colors.redAccent,
+                  fontSize: 14,
+                ),
+              ),
+            ),
           ],
         ),
       ),

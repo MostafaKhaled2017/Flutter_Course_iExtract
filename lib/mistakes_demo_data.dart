@@ -2,6 +2,12 @@ import 'package:FixMyEnglish/mistake.dart';
 
 var mistakes = [
   Mistake(
+      match: "mistake",
+      sentence: "Example for a mistake.",
+      label: "SPOKN1",
+      description: "Using a forbidden word"),
+
+  /*Mistake(
       match: "n't",
       sentence: "This solution isn't the most effective one.",
       label: "SPOKN1",
@@ -36,4 +42,6 @@ var mistakes = [
       label: "WORDNES3",
       description:
           "Describing purpose through the use of for + noun or for + gerund")
+
+   */
 ];
