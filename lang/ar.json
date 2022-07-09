@@ -1,5 +1,7 @@
 {
   "textFieldHint": "أدخل النص",
   "ElevatedButton": "ابدأالتحليل",
-  "MistakesPage": "صفحة الأخطاء"
+  "MistakesPage": "صفحة الأخطاء",
+  "NoMistakes" : "لا يوجد أخطاء",
+  "ApiNotWorking" : "واجهة برمجة التطبيقات لا تعمل. الرجاء المحاولة مجددا"
 }

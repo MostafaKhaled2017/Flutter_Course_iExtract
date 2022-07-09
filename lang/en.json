@@ -1,5 +1,7 @@
 {
   "textFieldHint": "Enter Text",
   "ElevatedButton": "Analyze Text",
-  "MistakesPage": "Mistakes Page"
+  "MistakesPage": "Mistakes Page",
+  "NoMistakes" : "No Mistakes Found",
+  "ApiNotWorking" : "API is not responding. Please try again"
 }
