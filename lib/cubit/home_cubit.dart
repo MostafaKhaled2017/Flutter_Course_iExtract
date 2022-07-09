@@ -7,6 +7,9 @@ import 'package:fix_my_english/views/mistakes_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../additional_files/app_constants.dart';
+import 'local/locale_cubit.dart';
+
 // We create class extends extends Cubit<states>
 class HomeCubit extends Cubit<HomeStates> {
   BuildContext context;
@@ -21,12 +24,21 @@ class HomeCubit extends Cubit<HomeStates> {
 
   // We create methods to modify the states
 
-  void changeTheme(String value) {
-    if (value == 'Light Theme') {
+  void performMenuAction(String value) {
+    if (value == 'Light Theme' || value == 'مظهر فاتح') {
       AdaptiveTheme.of(context).setLight();
-    } else if (value == 'Dark Theme') {
+    } else if (value == 'Dark Theme' || value == 'مظهر داكن') {
       AdaptiveTheme.of(context).setDark();
-    }
+    } else if(value == 'Change Language' || value == 'تغيير اللغة'){
+
+      if (currentLanguage == 'English') {
+        BlocProvider.of<LocaleCubit>(context).toArabic();
+        currentLanguage = 'Arabic';
+      } else if (currentLanguage == 'Arabic') {
+          BlocProvider.of<LocaleCubit>(context).toEnglish();
+          currentLanguage = 'English';
+      }
+      }
   }
 
   void submitText(String text) async {

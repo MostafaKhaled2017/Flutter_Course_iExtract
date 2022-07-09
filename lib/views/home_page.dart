@@ -31,35 +31,11 @@ class HomePage extends StatelessWidget {
                   title: const Text('iExtract'),
                   backgroundColor: const Color.fromRGBO(122, 55, 11, 1),
                   actions: <Widget>[
-                    DropdownButton<String>(
-                      value: currentLanguage,
-                      elevation: 16,
-                      onChanged: (String? newValue) {
-                        if (currentLanguage != newValue!) {
-                          currentLanguage = newValue;
-                          if (currentLanguage == 'English') {
-                            BlocProvider.of<LocaleCubit>(context).toEnglish();
-                          } else {
-                            BlocProvider.of<LocaleCubit>(context).toArabic();
-                          }
-                        }
-                      },
-                      items: <String>['English', 'عربي']
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(
-                            value,
-                            // style: const TextStyle(color: Colors.black),
-                          ),
-                        );
-                      }).toList(),
-                    ),
                     Padding(
                       padding: const EdgeInsets.only(right: 10),
                       child: PopupMenuButton<String>(
                         onSelected: (String choice) =>
-                            cubit.changeTheme(choice),
+                            cubit.performMenuAction(choice),
                         itemBuilder: (BuildContext context) {
                           return choices.map((String choice) {
                             return PopupMenuItem<String>(

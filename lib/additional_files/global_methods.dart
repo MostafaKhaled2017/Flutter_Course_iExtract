@@ -1,5 +1,8 @@
+import 'package:fix_my_english/additional_files/app_constants.dart';
 import 'package:universal_io/io.dart';
 import 'package:flutter/material.dart';
+
+import 'global_variables.dart';
 
 void onNetworkMissed(BuildContext context) {
   ScaffoldMessenger.of(context).showMaterialBanner(MaterialBanner(
@@ -28,6 +31,14 @@ Future<bool> hasNetwork(BuildContext context) async {
     }
   } else {
     return true;
+  }
+}
+
+dynamic getChoices(){
+  if(currentLanguage == 'English'){
+    return choices;
+  } else {
+    return choicesInArabic;
   }
 }
 
