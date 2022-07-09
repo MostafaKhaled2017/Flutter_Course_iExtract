@@ -1,8 +1,6 @@
 import 'package:fix_my_english/Localization/app_localizations.dart';
-import 'package:fix_my_english/additional_files/app_constants.dart';
 import 'package:fix_my_english/additional_files/global_variables.dart';
 import 'package:fix_my_english/cubit/home_cubit.dart';
-import 'package:fix_my_english/cubit/local/locale_cubit.dart';
 import 'package:fix_my_english/home_header.dart';
 import 'package:fix_my_english/states/home_states.dart';
 import 'package:flutter/material.dart';
