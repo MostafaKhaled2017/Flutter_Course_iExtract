@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'TextHighlight.dart';
+import 'text_highlight.dart';
 
 class MistakeItem extends StatelessWidget {
   final String sentence;
   final String match;
   final String description;
 
-  const MistakeItem(this.sentence, this.match, this.description);
+  const MistakeItem(this.sentence, this.match, this.description, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,8 @@ class MistakeItem extends StatelessWidget {
             buildDTH(sentence, matches, description),
             Padding(
               padding: const EdgeInsets.only(bottom: 5.0),
-              child: Text('Error: $description',
+              child: Text(
+                'Error: $description',
                 style: const TextStyle(
                   color: Colors.redAccent,
                   fontSize: 14,

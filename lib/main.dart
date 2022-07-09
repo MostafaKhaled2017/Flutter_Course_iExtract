@@ -1,19 +1,21 @@
 // @dart=2.9
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'firebase_options.dart';
-import 'views/home_page.dart';
-import 'Localization/app_localizations_setup.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+
+import 'Localization/app_localizations_setup.dart';
 import 'additional_files/app_constants.dart';
 import 'cubit/local/locale_cubit.dart';
-const proxy = 'https://cors-anywhere.herokuapp.com/';
-const urlAPI = 'https://aqueous-anchorage-93443.herokuapp.com/FixMyEnglish';
+import 'firebase_options.dart';
+import 'views/home_page.dart';
 
-void main() async{
+const proxy = 'https://cors-anywhere.herokuapp.com/';
+const urlAPI = 'https://aqueous-anchorage-93443.herokuapp.com/fix_my_english';
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   //Initializing Firebase
@@ -44,26 +46,26 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.grey,
       ),
       initial: AdaptiveThemeMode.light,
-        builder: (theme, darkTheme) => MultiBlocProvider(
+      builder: (theme, darkTheme) => MultiBlocProvider(
         providers: [
           BlocProvider<LocaleCubit>(create: (_) => LocaleCubit()),
-          ],
-            child: BlocBuilder<LocaleCubit, LocaleState>(
-              buildWhen: (previousState, currentState) =>
+        ],
+        child: BlocBuilder<LocaleCubit, LocaleState>(
+          buildWhen: (previousState, currentState) =>
               previousState != currentState,
-                builder: (_, localeState) {
-                  return MaterialApp(
-                    theme: theme,
-                    darkTheme: darkTheme,
-                    debugShowCheckedModeBanner: false,
-                    home: HomePage(),
-                    supportedLocales: supportedLocales,
-                    localizationsDelegates: localizationsDelegates,
-                    localeResolutionCallback: localeResolutionCallback,
-                    locale: localeState.locale,
-                  );
-                },
-            ),
+          builder: (_, localeState) {
+            return MaterialApp(
+              theme: theme,
+              darkTheme: darkTheme,
+              debugShowCheckedModeBanner: false,
+              home: HomePage(),
+              supportedLocales: supportedLocales,
+              localizationsDelegates: localizationsDelegates,
+              localeResolutionCallback: localeResolutionCallback,
+              locale: localeState.locale,
+            );
+          },
+        ),
       ),
     );
   }

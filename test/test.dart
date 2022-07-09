@@ -1,7 +1,7 @@
 // @dart=2.9
-import 'package:FixMyEnglish/file.dart';
-import 'package:FixMyEnglish/models/mistake.dart';
-import 'package:FixMyEnglish/mistake_api.dart';
+import 'package:fix_my_english/file.dart';
+import 'package:fix_my_english/mistake_api.dart';
+import 'package:fix_my_english/models/mistake.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -9,7 +9,7 @@ void main() {
   group('API testing', () {
     test(
       'unit tests',
-          () {
+      () {
         expect(
             mistakesFromAPI('aaa', 'a.pdf', null),
             Future.value(MistakeFile(
@@ -62,7 +62,5 @@ void main() {
             )));
       },
     );
-
   });
-
 }

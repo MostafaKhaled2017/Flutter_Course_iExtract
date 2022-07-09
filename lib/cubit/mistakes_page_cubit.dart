@@ -1,33 +1,27 @@
-import 'package:FixMyEnglish/states/mistakes_page_states.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fix_my_english/Widgets/mistake_item.dart';
+import 'package:fix_my_english/file.dart';
+import 'package:fix_my_english/models/mistake.dart';
+import 'package:fix_my_english/states/mistakes_page_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../Widgets/mistake_item.dart';
-import '../file.dart';
-import '../models/mistake.dart';
-
 // We create class extends extends Cubit<states>
-class MistakesPageCubit extends Cubit<MistakesPageStates>{
-
+class MistakesPageCubit extends Cubit<MistakesPageStates> {
   //We pass the initial state to super
-  MistakesPageCubit({MistakesPageStates? initialState}) : super(MistakesPageInitialState());
+  MistakesPageCubit({MistakesPageStates? initialState})
+      : super(MistakesPageInitialState());
 
   //We create Function to get object from cubit
-  static MistakesPageCubit get(BuildContext context){
+  static MistakesPageCubit get(BuildContext context) {
     return BlocProvider.of(context);
   }
 
-
   //We create methods foe changing the states
 
-  Widget loadData(context, snapshot){
-
-
-    if(snapshot.data == null){
+  Widget loadData(context, snapshot) {
+    if (snapshot.data == null) {
       return const Center(
-        child: CircularProgressIndicator(
-        ),
+        child: CircularProgressIndicator(),
       );
     }
 
@@ -40,8 +34,8 @@ class MistakesPageCubit extends Cubit<MistakesPageStates>{
         padding: const EdgeInsets.all(10),
         itemBuilder: (BuildContext context, int index) {
           Mistake currentItem = data[index];
-          return MistakeItem(currentItem.sentence,
-              currentItem.match, currentItem.description);
+          return MistakeItem(
+              currentItem.sentence, currentItem.match, currentItem.description);
         },
         itemCount: data.length,
       );
@@ -52,4 +46,3 @@ class MistakesPageCubit extends Cubit<MistakesPageStates>{
     }
   }
 }
-
