@@ -1,4 +1,4 @@
-import 'package:fix_my_english/Widgets/mistake_item.dart';
+import 'package:fix_my_english/widgets/mistake_item.dart';
 import 'package:fix_my_english/file.dart';
 import 'package:fix_my_english/models/mistake.dart';
 import 'package:fix_my_english/states/mistakes_page_states.dart';
